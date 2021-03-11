@@ -1,0 +1,29 @@
+body {
+  background: #eee;
+}
+
+.header {
+  padding: 50px;
+  width: 800px;
+  border: 1px solid black;
+  text-align: center;
+  margin: auto;
+  font-size: 40px;
+  background: blue;
+}
+
+.content {
+  padding: 50px;
+  width: 800px;
+  border: 1px solid green;
+  margin: auto;
+}
+
+.footer {
+  padding: 50px;
+  width: 800px;
+  border: 1px solid red;
+  text-align: right;;
+  margin: auto;
+  background: yellow;
+}
