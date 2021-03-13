@@ -8,15 +8,20 @@
   <title>Document</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
     .content {
       display: flex;
     }
 
     iframe {
-      width: 500px;
-      height: 300px;
       border: none;
       overflow: hidden;
+    }
+
+    textarea {
+      padding: 10px
     }
   </style>
 </head>
@@ -30,14 +35,12 @@
     </div>
     <div>
       <h2>Resultado</h2>
-      <iframe id="target-iframe" srcdoc=""></iframe>
-    </div>
-
-    <div>
-      <h2>Código do Aluno</h2>
-      <textarea placeholder="Colar Código HTML aqui" id="textarea" cols="30" rows="10"></textarea>
-      <br />
-      <button id="button">check</button>
+      <iframe style="display: none;" id="target-iframe" srcdoc=""></iframe>
+      <div id="code-container">
+        <textarea placeholder="Colar Código HTML aqui" id="textarea" cols="30" rows="10"></textarea>
+        <br />
+        <button id="button">check</button>
+      </div>
     </div>
   </div>
   <hr />
@@ -48,44 +51,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/resemblejs@3.2.5/resemble.min.js"></script>
-  <script>
-    const diff = document.getElementById('diff')
-    const percentage = document.getElementById('percentage')
-    const sourceIframe = document.getElementById('source-iframe')
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const sourceIframeUrl = urlParams.get('iframe')
-    sourceIframe.src = sourceIframeUrl
-
-    document.getElementById('button').addEventListener('click', async () => {
-      const textareaContent = document.getElementById('textarea').value
-      const targetIframe = document.getElementById('target-iframe')
-      targetIframe.srcdoc = textareaContent
-      targetIframe.style.display = 'block'
-
-      const sourceCanvas = await html2canvas(sourceIframe.contentDocument.body, {
-      })
-      const sourceImg = sourceCanvas.toDataURL()
-      const imgTest = document.createElement('img')
-      imgTest.src = sourceImg
-
-      const targetCanvas = await html2canvas(targetIframe.contentDocument.body)
-      const targetImg = targetCanvas.toDataURL()
-
-      resemble(sourceImg).compareTo(targetImg).onComplete(function (data) {
-        diff.src = data.getImageDataUrl();
-
-        // diff.appendChild(diffImage);
-        // console.log(data)
-        if (data.rawMisMatchPercentage === 0) {
-          percentage.innerText = `Seu exercício igual ao original, Parabéns!`
-        } else {
-          percentage.innerText = `Seu exercício esta diferente do original, olhe abaixo o que tem de diferente`
-        }
-      });
-
-    })
-  </script>
+  <script src="./main.js"></script>
 </body>
 
 </html>
