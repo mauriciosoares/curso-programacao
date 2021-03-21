@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Box</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .cabecalho {
+      width: 1280px;
+      background: yellow;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .conteudo {
+      width: 1280px;
+      margin: auto;
+      background: cadetblue;
+      padding: 20px 40px;
+      display: flex;
+    }
+
+    .barra-lateral {
+      width: 200px;
+    }
+
+    .rodape {
+      width: 1280px;
+      margin: auto;
+      background: darkgrey;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="cabecalho">
+    <h1>Empresa Legal</h1>
+
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Produtos</a>
+      <a href="#">Empresa</a>
+    </div>
+  </div>
+
+  <div class="conteudo">
+    <div class="barra-lateral">
+      <ul>
+        <li>
+          <a href="#">Menu 1</a>
+        </li>
+        <li>
+          <a href="#">Menu 2</a>
+        </li>
+        <li>
+          <a href="#">Menu 3</a>
+        </li>
+      </ul>
+    </div>
+    <div class="corpo">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo est qui asperiores necessitatibus laudantium magni nobis amet eum at ipsam repellendus, repudiandae, id nam harum eaque optio possimus culpa quis?
+    </div>
+  </div>
+
+  <div class="rodape">
+    <div>Desenvolvido por [nome do aluno]</div>
+  </div>
+</body>
+</html>

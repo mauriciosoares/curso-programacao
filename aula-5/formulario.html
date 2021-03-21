@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+
+  <style>
+    div {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="https://www.w3schools.com/action_page.php">
+    <div>
+      Nome<br />
+      <input placeholder="Colocar Nome aqui" name="nome" type="text">
+    </div>
+
+    <div>
+      Email<br />
+      <input name="email" type="email">
+    </div>
+
+    <div>
+      Senha<br />
+      <input name="senha" type="password">
+    </div>
+
+    <div>
+      Cidade<br />
+      <select name="cidade">
+        <option value="itupeva">Itupeva</option>
+        <option value="saopaulo">São Paulo</option>
+      </select>
+    </div>
+    
+    <div>
+      Gosto Musical<br />
+      <input type="checkbox" name="gostomusical" value="rock"> Rock
+      <input type="checkbox" name="gostomusical" value="pop"> Pop
+      <input type="checkbox" name="gostomusical" value="blues"> Blues
+    </div>
+
+    <div>
+      Sexo<br />
+      <input type="radio" name="sexo"> Masculino
+      <input type="radio" name="sexo"> Feminino
+    </div>
+
+    <div>
+      Cor Favorita<br />
+      <input type="color" name="cor">
+    </div>
+
+    <div>
+      Aniversário<br />
+      <input type="date" name="cor">
+    </div>
+
+    <div>
+      <button type="submit">Enviar Formulario</button>
+      <button type="reset">Limpar Formulário</button>
+    </div>
+  </form>
+</body>
+
+</html>
